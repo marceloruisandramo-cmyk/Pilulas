@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Balança da Justiça com design minimalista de Pílula -->
+  <rect width="48" height="48" rx="10" fill="#0f172a" />
+  <!-- Haste Central -->
+  <line x1="24" y1="10" x2="24" y2="36" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Travessão -->
+  <line x1="12" y1="16" x2="36" y2="16" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Base do Martelo / Balança -->
+  <path d="M17 38H31" stroke="#e2e8f0" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M19 35H29" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+  <!-- Pratos da Balança em formato oval de Pílula -->
+  <!-- Prato Esquerdo -->
+  <line x1="14" y1="17" x2="10" y2="25" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="14" y1="17" x2="18" y2="25" stroke="#94a3b8" stroke-width="1.5"/>
+  <path d="M9 25C9 28 19 28 19 25Z" fill="#d97706" fill-opacity="0.2" stroke="#d97706" stroke-width="1.5"/>
+  <!-- Prato Direito -->
+  <line x1="34" y1="17" x2="30" y2="25" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="34" y1="17" x2="38" y2="25" stroke="#94a3b8" stroke-width="1.5"/>
+  <path d="M29 25C29 28 39 28 39 25Z" fill="#d97706" fill-opacity="0.2" stroke="#d97706" stroke-width="1.5"/>
+  <!-- Círculo Topo -->
+  <circle cx="24" cy="9" r="2" fill="#d97706"/>
+</svg>

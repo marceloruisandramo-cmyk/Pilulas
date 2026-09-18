@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pílulas Jurídicas — Factos, Curiosidades e História do Direito</title>
+  <meta name="description" content="Portal editorial estático de factos, curiosidades, história e conhecimento jurídico em pílulas diárias, rigorosas e acessíveis. 100% estático e veloz.">
+  <link rel="canonical" href="index.html">
+  <meta property="og:title" content="Pílulas Jurídicas — Factos, Curiosidades e História do Direito">
+  <meta property="og:description" content="Conhecimento jurídico rigoroso, casos históricos e curiosidades fascinantes em doses rápidas de leitura.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Faixa Superior de Aviso Institucional -->
+  <div class="legal-alert-bar">
+    Pílulas Jurídicas • Conhecimento e História do Direito em Formato Estático, Rápido e Acessível
+  </div>
+
+  <!-- Cabeçalho Principal -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link" id="brandHeaderLink">
+        <img src="imagens/logo.svg" alt="Pílulas Jurídicas" class="brand-logo" width="34" height="34">
+        <div class="brand-text">
+          <span class="brand-title">Pílulas Jurídicas</span>
+          <span class="brand-subtitle">Curiosidades &amp; Direito</span>
+        </div>
+      </a>
+
+      <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Abrir Menu de Navegação" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav>
+        <ul id="navMenu" class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Início</a></li>
+          <li><a href="artigos.html" class="nav-link">Artigos</a></li>
+          <li><a href="categorias.html" class="nav-link">Categorias</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+          <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção Hero com Pesquisa Instantânea Local -->
+  <section class="hero-section">
+    <div class="container">
+      <span class="hero-pill">Enciclopédia Jurídica Aberta</span>
+      <h1 class="hero-title">O Direito explicado em doses rápidas, curiosas e rigorosas</h1>
+      <p class="hero-description">Histórias verídicas, casos célebres, aforismos latinos e as raízes fascinantes das leis que governam a sociedade moderna.</p>
+
+      <div class="search-wrapper">
+        <div class="search-box">
+          <input 
+            type="text" 
+            id="searchInput" 
+            class="search-input" 
+            placeholder="Pesquise por tema, caso, juiz ou termo latino (ex: Sócrates, martelo, miranda...)" 
+            autocomplete="off"
+            aria-label="Pesquisar artigos e curiosidades jurídicas"
+          >
+          <button class="search-icon-btn" aria-label="Botão de pesquisa">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+        </div>
+        <div id="searchResults" class="search-results" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo Central -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Pílula do Dia (Destaque Principal) -->
+      <section class="featured-box" id="pilulaDoDia">
+        <div class="featured-tag">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          Pílula em Destaque
+        </div>
+        <h2 class="featured-title">
+          <a href="artigos/origem-martelo-juizes.html" style="color: inherit; text-decoration: none;">A Origem Histórica do Martelo dos Juízes (Gavel)</a>
+        </h2>
+        <p class="featured-excerpt">
+          Por que o pequeno martelo de madeira se tornou o símbolo mundial do judiciário nas telas de cinema, mesmo sendo inexistente na esmagadora maioria dos tribunais da Europa e da América Latina? Conheça a jornada de um costume parlamentar norte-americano que virou mito global.
+        </p>
+        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+          <a href="artigos/origem-martelo-juizes.html" class="btn btn-primary" id="btnLerDestaque">Ler Pílula Completa &rarr;</a>
+          <span style="font-size: 0.85rem; color: #64748b;">Jurisdição: Common Law • 3 min de leitura</span>
+        </div>
+      </section>
+
+      <!-- Seletor Rápido de Categorias -->
+      <section style="margin-bottom: 2.5rem;">
+        <div class="section-header">
+          <h2 class="section-title">Navegar por Temas</h2>
+          <a href="categorias.html" class="section-link">Ver todas as 11 categorias &rarr;</a>
+        </div>
+        <div class="categories-list">
+          <a href="categorias.html?cat=Curiosidades%20Jurídicas" class="cat-chip">Curiosidades Jurídicas <span class="cat-count">2</span></a>
+          <a href="categorias.html?cat=História%20do%20Direito" class="cat-chip">História do Direito <span class="cat-count">2</span></a>
+          <a href="categorias.html?cat=Direito%20Penal" class="cat-chip">Direito Penal <span class="cat-count">1</span></a>
+          <a href="categorias.html?cat=Direito%20Civil" class="cat-chip">Direito Civil <span class="cat-count">1</span></a>
+          <a href="categorias.html?cat=Direito%20Constitucional" class="cat-chip">Direito Constitucional <span class="cat-count">1</span></a>
+          <a href="categorias.html?cat=Casos%20Famosos" class="cat-chip">Casos Famosos <span class="cat-count">1</span></a>
+          <a href="categorias.html?cat=Leis%20Curiosas" class="cat-chip">Leis Curiosas <span class="cat-count">1</span></a>
+          <a href="categorias.html?cat=Tribunais" class="cat-chip">Tribunais <span class="cat-count">1</span></a>
+          <a href="categorias.html?cat=Termos%20Jurídicos" class="cat-chip">Termos Jurídicos <span class="cat-count">1</span></a>
+        </div>
+      </section>
+
+      <!-- Últimas Pílulas Jurídicas Publicadas -->
+      <section>
+        <div class="section-header">
+          <h2 class="section-title">Últimas Pílulas Publicadas</h2>
+          <a href="artigos.html" class="section-link">Explorar arquivo completo &rarr;</a>
+        </div>
+
+        <div class="articles-grid">
+          <!-- Card 1 -->
+          <article class="card">
+            <div class="card-meta">
+              <span class="badge badge-gold">História do Direito</span>
+              <span class="badge badge-jurisdiction">Grécia / Roma</span>
+              <span>14/09/2026</span>
+            </div>
+            <h3 class="card-title">
+              <a href="artigos/deusa-temis-venda-olhos.html">Por Que a Deusa Têmis Usa Venda nos Olhos?</a>
+            </h3>
+            <p class="card-summary">
+              Ao contrário do que muitos pensam, as estátuas clássicas da Justiça tinham olhos abertos. Saiba como uma sátira renascentista de 1494 mudou o símbolo mundial da equidade.
+            </p>
+            <div class="card-footer">
+              <span>Leitura: 4 min</span>
+              <a href="artigos/deusa-temis-venda-olhos.html" class="read-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <div class="card-meta">
+              <span class="badge badge-gold">Casos Famosos</span>
+              <span class="badge badge-jurisdiction">Grécia Antiga</span>
+              <span>12/09/2026</span>
+            </div>
+            <h3 class="card-title">
+              <a href="artigos/julgamento-de-socrates.html">O Julgamento de Sócrates (399 a.C.)</a>
+            </h3>
+            <p class="card-summary">
+              Como funcionou a Helieia, o tribunal de 500 cidadãos atenienses que julgou Sócrates por impiedade religiosa e corrupção da juventude.
+            </p>
+            <div class="card-footer">
+              <span>Leitura: 4 min</span>
+              <a href="artigos/julgamento-de-socrates.html" class="read-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card">
+            <div class="card-meta">
+              <span class="badge badge-gold">Direito Penal</span>
+              <span class="badge badge-jurisdiction">Estados Unidos</span>
+              <span>10/09/2026</span>
+            </div>
+            <h3 class="card-title">
+              <a href="artigos/regra-de-miranda-aviso.html">A Regra de Miranda e o Direito ao Silêncio</a>
+            </h3>
+            <p class="card-summary">
+              A história real por trás do célebre aviso "Você tem o direito de permanecer em silêncio" instituído pela Suprema Corte dos EUA no caso Miranda v. Arizona (1966).
+            </p>
+            <div class="card-footer">
+              <span>Leitura: 4 min</span>
+              <a href="artigos/regra-de-miranda-aviso.html" class="read-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="card">
+            <div class="card-meta">
+              <span class="badge badge-gold">Direito Constitucional</span>
+              <span class="badge badge-jurisdiction">Inglaterra</span>
+              <span>08/09/2026</span>
+            </div>
+            <h3 class="card-title">
+              <a href="artigos/historia-habeas-corpus.html">Habeas Corpus: O Mais Antigo Remédio em Vigor</a>
+            </h3>
+            <p class="card-summary">
+              Das origens na Magna Carta de 1215 e no Habeas Corpus Act de 1679 à consagração universal na defesa da liberdade de ir e vir do cidadão.
+            </p>
+            <div class="card-footer">
+              <span>Leitura: 4 min</span>
+              <a href="artigos/historia-habeas-corpus.html" class="read-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="card">
+            <div class="card-meta">
+              <span class="badge badge-gold">Leis Curiosas</span>
+              <span class="badge badge-jurisdiction">Reino Unido</span>
+              <span>05/09/2026</span>
+            </div>
+            <h3 class="card-title">
+              <a href="artigos/lei-armaduras-parlamento-britanico.html">A Lei de 1313 que Proíbe Armaduras no Parlamento</a>
+            </h3>
+            <p class="card-summary">
+              Promulgada pelo Rei Eduardo II para conter barões rebeldes, a norma continua formalmente nos livros de leis ingleses após mais de 700 anos.
+            </p>
+            <div class="card-footer">
+              <span>Leitura: 3 min</span>
+              <a href="artigos/lei-armaduras-parlamento-britanico.html" class="read-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="card">
+            <div class="card-meta">
+              <span class="badge badge-gold">Direito Civil</span>
+              <span class="badge badge-jurisdiction">Reino Unido</span>
+              <span>03/09/2026</span>
+            </div>
+            <h3 class="card-title">
+              <a href="artigos/caso-donoghue-stevenson-caramujo.html">O Caramujo na Garrafa: Donoghue v. Stevenson</a>
+            </h3>
+            <p class="card-summary">
+              O julgamento escocês de 1932 que formulou o "Princípio do Vizinho" e fundou a teoria da responsabilidade civil por defeito de produto.
+            </p>
+            <div class="card-footer">
+              <span>Leitura: 4 min</span>
+              <a href="artigos/caso-donoghue-stevenson-caramujo.html" class="read-link">Ler artigo &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Caixa de Curiosidade Rápida -->
+      <section style="margin-top: 3rem; background: #ffffff; border: 1px solid var(--color-border); border-radius: 8px; padding: 1.5rem; text-align: center;">
+        <h3 style="font-size: 1.25rem; margin-top: 0; color: #0f172a;">Sabia disto?</h3>
+        <p style="max-width: 700px; margin: 0.5rem auto 1rem; color: #475569; font-size: 0.95rem;">
+          Na Idade Média européia, animais eram indiciados, recebiam advogados pagos pelo tribunal e eram formalmente submetidos a julgamentos perante magistrados com testemunhas e rito processual completo.
+        </p>
+        <a href="artigos/julgamentos-animais-idade-media.html" class="btn btn-secondary" style="font-size: 0.88rem;">Conhecer o Julgamento dos Animais &rarr;</a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Rodapé Institucional -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">Pílulas Jurídicas</div>
+          <p>O portal editorial estático dedicado à história, curiosidades, jurisprudência marcante e factos fascinantes sobre o mundo do Direito.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Navegação</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="artigos.html">Todos os Artigos</a></li>
+            <li><a href="categorias.html">Categorias Temáticas</a></li>
+            <li><a href="sobre.html">Sobre o Projeto</a></li>
+            <li><a href="contacto.html">Contacto Editorial</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Editorial</div>
+          <ul class="footer-links">
+            <li><a href="admin/index.html">Painel Administrativo</a></li>
+            <li><a href="admin/novo-artigo.html">Gerador de Artigos</a></li>
+            <li><a href="sitemap.xml">Mapa do Site (XML)</a></li>
+            <li><a href="robots.txt">Robots.txt</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-legal-notice">
+        <strong>Aviso Legal Obrigatório:</strong> Este site possui finalidade exclusivamente informativa e educativa. O conteúdo apresentado não constitui aconselhamento jurídico e não substitui a consulta a um profissional habilitado.
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Pílulas Jurídicas. Site 100% Estático • Zero Dependências.</div>
+        <div>Desenvolvido com HTML5, CSS3 e JS Puro para Cloudflare Pages &amp; GitHub.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

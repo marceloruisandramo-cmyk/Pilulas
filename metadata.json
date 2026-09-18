@@ -1,0 +1,6 @@
+{
+  "name": "Pílulas Jurídicas",
+  "description": "Portal editorial estático de factos, curiosidades, histórias e conhecimento jurídico em pílulas acessíveis e rigorosas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

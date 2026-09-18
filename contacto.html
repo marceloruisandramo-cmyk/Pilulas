@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto e Sugestões — Pílulas Jurídicas</title>
+  <meta name="description" content="Entre em contacto com a equipa do Pílulas Jurídicas para enviar sugestões de temas, correções factuais ou colaborações editoriais.">
+  <link rel="canonical" href="contacto.html">
+  <meta property="og:title" content="Contacto e Sugestões — Pílulas Jurídicas">
+  <meta property="og:description" content="Canal de comunicação com os leitores e pesquisadores do projeto Pílulas Jurídicas.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="legal-alert-bar">
+    Pílulas Jurídicas • Conhecimento e História do Direito em Formato Estático e Veloz
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-link">
+        <img src="imagens/logo.svg" alt="Pílulas Jurídicas" class="brand-logo" width="34" height="34">
+        <div class="brand-text">
+          <span class="brand-title">Pílulas Jurídicas</span>
+          <span class="brand-subtitle">Curiosidades &amp; Direito</span>
+        </div>
+      </a>
+
+      <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Abrir Menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav>
+        <ul id="navMenu" class="nav-menu">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="artigos.html" class="nav-link">Artigos</a></li>
+          <li><a href="categorias.html" class="nav-link">Categorias</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+          <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container reading-container">
+      <article>
+        <header class="article-header">
+          <div class="breadcrumbs">
+            <a href="index.html">Início</a> &rsaquo; 
+            <span>Contacto</span>
+          </div>
+          <h1 class="article-title">Fale Conosco</h1>
+          <p class="article-lead">Tem alguma sugestão de caso histórico, apontamento de fonte documental ou dúvida sobre o nosso portal? Envie uma mensagem diretamente para a nossa equipa.</p>
+        </header>
+
+        <section class="article-body">
+          <div style="background: #ffffff; border: 1px solid var(--color-border); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem;">
+            <h2 style="margin-top: 0; font-size: 1.3rem;">Canais Oficiais</h2>
+            <p>Por sermos um projeto de código aberto e publicação estática via GitHub, encorajamos comunicações diretas:</p>
+            <ul style="list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 0.75rem;">
+                <strong>Correio Eletrónico Editorial:</strong><br>
+                <a href="mailto:redacao@pilulasjuridicas.com">redacao@pilulasjuridicas.com</a>
+              </li>
+              <li style="margin-bottom: 0.75rem;">
+                <strong>Repositório do Projeto no GitHub:</strong><br>
+                Sugestões de novos artigos podem ser submetidas diretamente via <em>Pull Request</em> ou <em>Issues</em> no repositório oficial.
+              </li>
+            </ul>
+          </div>
+
+          <h2>Formulário de Sugestão de Pílula Jurídica</h2>
+          <p>Utilize o formulário abaixo para sugerir um tema ou caso histórico. Por funcionar sem servidor de backend, o envio abre diretamente o seu cliente de e-mail com os campos preenchidos:</p>
+
+          <form action="mailto:redacao@pilulasjuridicas.com" method="GET" enctype="text/plain" style="background: #ffffff; border: 1px solid var(--color-border); border-radius: 8px; padding: 1.5rem;">
+            <div class="form-group">
+              <label for="contactSubject" class="form-label">Assunto ou Tema Proposto:</label>
+              <input type="text" id="contactSubject" name="subject" class="form-control" placeholder="Ex: Sugestão de pílula: O Julgamento de Nuremberg" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contactBody" class="form-label">Mensagem ou Detalhes Históricos:</label>
+              <textarea id="contactBody" name="body" class="form-control" placeholder="Conte-nos brevemente o facto, caso ou fonte jurídica sugerida..." rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="btnEnviarMensagem">
+              Enviar Sugestão por E-mail &rarr;
+            </button>
+          </form>
+
+          <div class="disclaimer-card" style="margin-top: 2rem;">
+            <div class="disclaimer-icon">ℹ️</div>
+            <div>
+              <strong>Lembrete:</strong> A nossa equipa não presta consultoria jurídica, não elabora pareceres e não atua em processos judiciais em andamento. Para questões jurídicas concretas, consulte um advogado habilitado.
+            </div>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-title">Pílulas Jurídicas</div>
+          <p>O portal editorial estático dedicado à história, curiosidades, jurisprudência marcante e factos fascinantes sobre o mundo do Direito.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Navegação</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="artigos.html">Todos os Artigos</a></li>
+            <li><a href="categorias.html">Categorias Temáticas</a></li>
+            <li><a href="sobre.html">Sobre o Projeto</a></li>
+            <li><a href="contacto.html">Contacto Editorial</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Editorial</div>
+          <ul class="footer-links">
+            <li><a href="admin/index.html">Painel Administrativo</a></li>
+            <li><a href="admin/novo-artigo.html">Gerador de Artigos</a></li>
+            <li><a href="sitemap.xml">Mapa do Site (XML)</a></li>
+            <li><a href="robots.txt">Robots.txt</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-legal-notice">
+        <strong>Aviso Legal Obrigatório:</strong> Este site possui finalidade exclusivamente informativa e educativa. O conteúdo apresentado não constitui aconselhamento jurídico e não substitui a consulta a um profissional habilitado.
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Pílulas Jurídicas. Site 100% Estático • Zero Dependências.</div>
+        <div>Desenvolvido com HTML5, CSS3 e JS Puro para Cloudflare Pages &amp; GitHub.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

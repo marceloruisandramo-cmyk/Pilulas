@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Editorial Estático — Pílulas Jurídicas</title>
+  <meta name="description" content="Painel administrativo estático para gestão e geração de novos artigos do portal Pílulas Jurídicas.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="legal-alert-bar">
+    Painel Editorial Estático • 100% Local no Navegador • Sem Servidor • Sem Banco de Dados
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-link">
+        <img src="../imagens/logo.svg" alt="Pílulas Jurídicas" class="brand-logo" width="34" height="34">
+        <div class="brand-text">
+          <span class="brand-title">Pílulas Jurídicas</span>
+          <span class="brand-subtitle">Administração Editorial</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Ver Site</a></li>
+          <li><a href="index.html" class="nav-link active">Painel</a></li>
+          <li><a href="novo-artigo.html" class="nav-link">Novo Artigo</a></li>
+          <li><a href="modelo-artigo.html" class="nav-link">Modelo HTML</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container reading-container">
+      <div style="margin-bottom: 2rem;">
+        <span class="admin-badge">Painel de Controlo Estático</span>
+        <h1 style="margin-top: 0.25rem;">Gestão Editorial do Portal</h1>
+        <p style="color: #64748b;">
+          Este painel funciona inteiramente no seu navegador, sem necessidade de servidores, autenticações complicadas ou bancos de dados. Todas as operações são feitas gerando arquivos HTML puros e prontos para publicação via GitHub e Cloudflare Pages.
+        </p>
+      </div>
+
+      <!-- Ações Rápidas -->
+      <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 2.5rem;">
+        <div class="card" style="border-left: 4px solid var(--color-accent);">
+          <h2 style="font-size: 1.3rem; margin-top: 0;">Criar Novo Artigo / Pílula</h2>
+          <p class="card-summary">
+            Preencha o formulário assistido para gerar automaticamente o código HTML semântico completo, com metatags, cabeçalhos, aviso jurídico e baixar o arquivo com o slug correto (.html).
+          </p>
+          <div>
+            <a href="novo-artigo.html" class="btn btn-primary" id="btnIrGerador">Abrir Gerador de Artigo &rarr;</a>
+          </div>
+        </div>
+
+        <div class="card" style="border-left: 4px solid #0f172a;">
+          <h2 style="font-size: 1.3rem; margin-top: 0;">Ver Modelo HTML Padrão</h2>
+          <p class="card-summary">
+            Consulte a estrutura canônica de um artigo do Pílulas Jurídicas, com todas as tags semânticas, classes CSS e recomendações de SEO.
+          </p>
+          <div>
+            <a href="modelo-artigo.html" class="btn btn-secondary" id="btnIrModelo">Ver Estrutura do Modelo &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fluxo de Publicação -->
+      <section style="background: #ffffff; border: 1px solid var(--color-border); border-radius: 8px; padding: 1.5rem;">
+        <h2 style="margin-top: 0; font-size: 1.3rem;">Como Adicionar um Novo Artigo (Passo a Passo)</h2>
+        <ol style="margin-left: 1.5rem; line-height: 1.8; color: #334155;">
+          <li>Abra a página <a href="novo-artigo.html"><strong>/admin/novo-artigo.html</strong></a>;</li>
+          <li>Preencha os campos (Título, Categoria, Jurisdição, Conteúdo, Fontes);</li>
+          <li>Clique no botão <strong>GERAR ARTIGO HTML</strong>;</li>
+          <li>Baixe o arquivo gerado (ex: <code>meu-novo-artigo.html</code>);</li>
+          <li>Coloque o arquivo baixado dentro da pasta <code>/artigos/</code> do projeto;</li>
+          <li>(Opcional) Adicione o card do artigo na página <code>artigos.html</code>;</li>
+          <li>(Opcional) Adicione o objeto do artigo na lista do <code>js/app.js</code> para busca instantânea;</li>
+          <li>Faça o <code>git commit</code> e <code>git push</code> no GitHub;</li>
+          <li>O <strong>Cloudflare Pages</strong> publica o artigo automaticamente em menos de 10 segundos!</li>
+        </ol>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 Pílulas Jurídicas • Painel 100% Estático</div>
+        <div><a href="../index.html" style="color: #cbd5e1;">Voltar ao Site</a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

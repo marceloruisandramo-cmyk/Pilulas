@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo Canônico de Artigo — Pílulas Jurídicas</title>
+  <meta name="description" content="Estrutura canônica de código HTML semântico para artigos do portal Pílulas Jurídicas.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="legal-alert-bar">
+    Pílulas Jurídicas • Documentação do Padrão Arquitetural de Artigo Estático
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-link">
+        <img src="../imagens/logo.svg" alt="Pílulas Jurídicas" class="brand-logo" width="34" height="34">
+        <div class="brand-text">
+          <span class="brand-title">Pílulas Jurídicas</span>
+          <span class="brand-subtitle">Modelo Canônico</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Ver Site</a></li>
+          <li><a href="index.html" class="nav-link">Painel</a></li>
+          <li><a href="novo-artigo.html" class="nav-link">Novo Artigo</a></li>
+          <li><a href="modelo-artigo.html" class="nav-link active">Modelo HTML</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container reading-container">
+      <article>
+        <header class="article-header">
+          <div class="breadcrumbs">
+            <a href="index.html">Painel</a> &rsaquo; 
+            <span>Modelo Canônico de Artigo</span>
+          </div>
+          <h1 class="article-title">Estrutura Canônica de um Artigo Estático</h1>
+          <p class="article-lead">Guia de referência detalhando cada componente semântico exigido em cada página de artigo na pasta <code>/artigos/</code>.</p>
+        </header>
+
+        <section class="article-body">
+          <p>Para garantir que o portal permaneça veloz, acessível e sem quebra de links após deploy no Cloudflare Pages, todo arquivo dentro de <code>/artigos/</code> segue rigidamente os padrões abaixo:</p>
+
+          <h2>1. Caminhos Relativos Universais</h2>
+          <p>Como os artigos ficam dentro da pasta <code>/artigos/</code>, todos os links para a raiz utilizam <code>../</code>:</p>
+          <ul>
+            <li>Folha de estilos: <code>&lt;link rel="stylesheet" href="../css/style.css"&gt;</code></li>
+            <li>Script local: <code>&lt;script src="../js/app.js"&gt;&lt;/script&gt;</code></li>
+            <li>Logotipo: <code>&lt;img src="../imagens/logo.svg" ...&gt;</code></li>
+            <li>Link da home: <code>&lt;a href="../index.html"&gt;</code></li>
+          </ul>
+
+          <h2>2. Elementos Semânticos Obrigatórios</h2>
+          <ol>
+            <li><strong>Cabeçalho do Artigo (<code>&lt;header class="article-header"&gt;</code>):</strong> Breadcrumbs, H1, lead explicativo e barra com metadados (categoria, jurisdição, data, autor e tempo de leitura estimado).</li>
+            <li><strong>Corpo Editorial (<code>&lt;section class="article-body"&gt;</code>):</strong> Parágrafos <code>&lt;p&gt;</code>, subtítulos <code>&lt;h2&gt;</code>, citações em destaque <code>&lt;blockquote&gt;</code> e listas <code>&lt;ul&gt;</code> ou <code>&lt;ol&gt;</code>.</li>
+            <li><strong>Caixa de Fontes (<code>&lt;section class="sources-box"&gt;</code>):</strong> Onde constam as fontes históricas e referências documentais primárias.</li>
+            <li><strong>Aviso Jurídico Obrigatório (<code>&lt;div class="disclaimer-card"&gt;</code>):</strong> O texto estatutário avisando que o portal não constitui consultoria jurídica.</li>
+            <li><strong>Artigos Relacionados (<code>&lt;section class="related-articles"&gt;</code>):</strong> Dois cartões com links para outras pílulas do portal.</li>
+          </ol>
+
+          <h2>3. Código-Fonte Boilerplate Copiável</h2>
+          <p>Se preferir criar manualmente um artigo sem usar o gerador automático, use a base abaixo:</p>
+
+          <pre class="code-output-box" style="margin-top: 1rem;">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Título do Artigo — Pílulas Jurídicas&lt;/title&gt;
+  &lt;meta name="description" content="Descrição resumida para mecanismos de busca."&gt;
+  &lt;link rel="stylesheet" href="../css/style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="legal-alert-bar"&gt;Pílulas Jurídicas • Conhecimento e História do Direito&lt;/div&gt;
+
+  &lt;header class="site-header"&gt;
+    &lt;div class="container header-inner"&gt;
+      &lt;a href="../index.html" class="brand-link"&gt;
+        &lt;img src="../imagens/logo.svg" alt="Pílulas Jurídicas" class="brand-logo" width="34" height="34"&gt;
+        &lt;span class="brand-title"&gt;Pílulas Jurídicas&lt;/span&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;main class="main-content"&gt;
+    &lt;div class="container reading-container"&gt;
+      &lt;article&gt;
+        &lt;header class="article-header"&gt;
+          &lt;h1 class="article-title"&gt;Título da Pílula Jurídica&lt;/h1&gt;
+          &lt;p class="article-lead"&gt;Resumo conceitual da pílula jurídica em destaque.&lt;/p&gt;
+        &lt;/header&gt;
+        &lt;section class="article-body"&gt;
+          &lt;p&gt;Texto factual do artigo devidamente documentado.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;div class="disclaimer-card"&gt;
+          &lt;strong&gt;Aviso Jurídico:&lt;/strong&gt; Este site possui finalidade exclusivamente informativa e educativa.
+        &lt;/div&gt;
+      &lt;/article&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+  &lt;script src="../js/app.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 Pílulas Jurídicas • Documentação de Modelo</div>
+        <div><a href="index.html" style="color: #cbd5e1;">Voltar ao Painel</a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Regras de Cabeçalho do Cloudflare Pages
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: document-domain=(), camera=(), microphone=(), geolocation=()
+
+/css/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/js/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/imagens/*
+  Cache-Control: public, max-age=2592000, immutable
+
+/*.html
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400

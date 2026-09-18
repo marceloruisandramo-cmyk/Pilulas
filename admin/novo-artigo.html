@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Artigos HTML — Pílulas Jurídicas</title>
+  <meta name="description" content="Ferramenta no navegador para compor e exportar novos artigos em HTML puro.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .generator-output-section {
+      display: none;
+      margin-top: 2rem;
+      border-top: 2px dashed var(--color-border);
+      padding-top: 2rem;
+    }
+    .generator-output-section.visible {
+      display: block;
+    }
+    .action-bar {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="legal-alert-bar">
+    Gerador de Artigo Estático • Processamento 100% no Navegador • Baixe o HTML Diretamente
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-link">
+        <img src="../imagens/logo.svg" alt="Pílulas Jurídicas" class="brand-logo" width="34" height="34">
+        <div class="brand-text">
+          <span class="brand-title">Pílulas Jurídicas</span>
+          <span class="brand-subtitle">Gerador de Artigo</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Ver Site</a></li>
+          <li><a href="index.html" class="nav-link">Painel</a></li>
+          <li><a href="novo-artigo.html" class="nav-link active">Novo Artigo</a></li>
+          <li><a href="modelo-artigo.html" class="nav-link">Modelo HTML</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="container reading-container">
+      <div style="margin-bottom: 1.5rem;">
+        <span class="admin-badge">Ferramenta 100% Client-Side</span>
+        <h1 style="margin-top: 0.25rem;">Novo Artigo / Pílula Jurídica</h1>
+        <p style="color: #64748b;">
+          Preencha as informações do artigo. Ao clicar em "Gerar Artigo HTML", o código semântico completo será montado instantaneamente na sua tela e estará pronto para ser baixado ou copiado.
+        </p>
+      </div>
+
+      <!-- Formulário de Composição do Artigo -->
+      <form id="articleForm" style="background: #ffffff; border: 1px solid var(--color-border); border-radius: 8px; padding: 1.5rem;" onsubmit="return false;">
+        
+        <div class="form-group">
+          <label for="artTitle" class="form-label">Título do Artigo: *</label>
+          <input type="text" id="artTitle" class="form-control" placeholder="Ex: O Julgamento de Nuremberg e a Criação do Direito Internacional Penal" required>
+          <div class="form-hint">Dica: Títulos claros e descritivos geram slugs melhores.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="artSlug" class="form-label">Nome do Arquivo (Slug Automático): *</label>
+          <input type="text" id="artSlug" class="form-control" placeholder="julgamento-de-nuremberg.html" required>
+          <div class="form-hint">O nome gerado automaticamente para salvar na pasta <code>/artigos/</code>.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="artLead" class="form-label">Resumo / Subtítulo: *</label>
+          <textarea id="artLead" class="form-control" style="min-height: 70px;" placeholder="Breve parágrafo explicativo em itálico que sintetiza a relevância da pílula..." required></textarea>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="artCategory" class="form-label">Categoria Principal: *</label>
+            <select id="artCategory" class="form-control" required>
+              <option value="Curiosidades Jurídicas">Curiosidades Jurídicas</option>
+              <option value="História do Direito">História do Direito</option>
+              <option value="Direito Penal">Direito Penal</option>
+              <option value="Direito Civil">Direito Civil</option>
+              <option value="Direito Constitucional">Direito Constitucional</option>
+              <option value="Direito do Trabalho">Direito do Trabalho</option>
+              <option value="Direito Internacional">Direito Internacional</option>
+              <option value="Leis Curiosas">Leis Curiosas</option>
+              <option value="Tribunais">Tribunais</option>
+              <option value="Casos Famosos">Casos Famosos</option>
+              <option value="Termos Jurídicos">Termos Jurídicos</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="artJurisdiction" class="form-label">Jurisdição / País: *</label>
+            <input type="text" id="artJurisdiction" class="form-control" placeholder="Ex: Alemanha / Internacional" value="Geral" required>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="artAuthor" class="form-label">Autor: *</label>
+            <input type="text" id="artAuthor" class="form-control" value="Redação Pílulas Jurídicas" required>
+          </div>
+
+          <div class="form-group">
+            <label for="artDate" class="form-label">Data de Publicação: *</label>
+            <input type="text" id="artDate" class="form-control" value="18 de Setembro de 2026" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="artMetaDesc" class="form-label">Meta Description (SEO): *</label>
+          <input type="text" id="artMetaDesc" class="form-control" placeholder="Resumo de até 155 caracteres para o Google e redes sociais..." required>
+        </div>
+
+        <div class="form-group">
+          <label for="artContent" class="form-label">Conteúdo do Artigo (HTML ou Parágrafos): *</label>
+          <textarea id="artContent" class="form-control" style="min-height: 220px;" placeholder="Escreva os parágrafos do artigo. Pode utilizar tags como &lt;p&gt;, &lt;h2&gt;, &lt;blockquote&gt;, &lt;ul&gt;, &lt;li&gt;. Se digitar texto puro com linhas em branco, os parágrafos serão envolvidos automaticamente em &lt;p&gt;." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="artSources" class="form-label">Fontes &amp; Referências Históricas: *</label>
+          <textarea id="artSources" class="form-control" style="min-height: 80px;" placeholder="Insira uma fonte por linha (ex: Tribunal Penal Militar Internacional de Nuremberg; Livro X de Y)."></textarea>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <button type="button" id="btnGenerate" class="btn btn-primary" style="font-size: 1.05rem; padding: 0.8rem 1.6rem;">
+            GERAR ARTIGO HTML &rarr;
+          </button>
+        </div>
+      </form>
+
+      <!-- Seção de Resultado / Download -->
+      <section id="outputSection" class="generator-output-section">
+        <h2 style="font-size: 1.4rem; color: #0f172a; margin-top: 0;">Artigo Gerado com Sucesso!</h2>
+        <p style="color: #15803d; font-weight: 600;">
+          Arquivo pronto: <code id="outFilename" style="background: #dcfce7; padding: 0.2rem 0.4rem; border-radius: 4px;">artigo.html</code>
+        </p>
+
+        <div class="action-bar">
+          <button type="button" id="btnDownload" class="btn btn-primary">
+            Baixar Arquivo HTML (.html)
+          </button>
+          <button type="button" id="btnCopyHtml" class="btn btn-secondary">
+            Copiar Código HTML
+          </button>
+          <button type="button" id="btnTogglePreview" class="btn btn-dark">
+            Alternar Prévia Visual
+          </button>
+        </div>
+
+        <div id="previewContainer" style="display: none; margin-top: 1.5rem; background: #ffffff; border: 2px solid var(--color-accent); border-radius: 8px; padding: 1.5rem;">
+          <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--color-accent); font-weight: 700; margin-bottom: 0.5rem;">Prévia no Navegador:</div>
+          <div id="previewContent"></div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <label class="form-label">Código-Fonte HTML Gerado:</label>
+          <div id="codeOutput" class="code-output-box"></div>
+        </div>
+
+        <!-- Trecho para app.js -->
+        <div style="margin-top: 1.5rem; background: #f8fafc; border: 1px solid var(--color-border); border-radius: 8px; padding: 1.25rem;">
+          <h3 style="margin-top: 0; font-size: 1.05rem;">Trecho para adicionar em <code>js/app.js</code>:</h3>
+          <p style="font-size: 0.82rem; color: #64748b;">Copie e cole este objeto dentro do array <code>const artigos = [...]</code> para que o novo artigo apareça instantaneamente na pesquisa local:</p>
+          <pre id="appJsSnippet" style="background: #0f172a; color: #f8fafc; padding: 0.75rem; border-radius: 6px; font-size: 0.82rem; overflow-x: auto;"></pre>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 Pílulas Jurídicas • Gerador 100% Estático</div>
+        <div><a href="index.html" style="color: #cbd5e1;">Voltar ao Painel</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const titleInput = document.getElementById("artTitle");
+      const slugInput = document.getElementById("artSlug");
+      const leadInput = document.getElementById("artLead");
+      const categoryInput = document.getElementById("artCategory");
+      const jurisdictionInput = document.getElementById("artJurisdiction");
+      const authorInput = document.getElementById("artAuthor");
+      const dateInput = document.getElementById("artDate");
+      const metaDescInput = document.getElementById("artMetaDesc");
+      const contentInput = document.getElementById("artContent");
+      const sourcesInput = document.getElementById("artSources");
+
+      const btnGenerate = document.getElementById("btnGenerate");
+      const outputSection = document.getElementById("outputSection");
+      const outFilename = document.getElementById("outFilename");
+      const codeOutput = document.getElementById("codeOutput");
+      const appJsSnippet = document.getElementById("appJsSnippet");
+      const btnDownload = document.getElementById("btnDownload");
+      const btnCopyHtml = document.getElementById("btnCopyHtml");
+      const btnTogglePreview = document.getElementById("btnTogglePreview");
+      const previewContainer = document.getElementById("previewContainer");
+      const previewContent = document.getElementById("previewContent");
+
+      let generatedHtmlCode = "";
+      let currentSlug = "";
+
+      // Slugify automático
+      function slugify(text) {
+        return text
+          .toString()
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .replace(/[^\w\s-]/g, "")
+          .trim()
+          .replace(/\s+/g, "-")
+          .replace(/--+/g, "-") + ".html";
+      }
+
+      titleInput.addEventListener("input", function () {
+        if (titleInput.value.trim()) {
+          slugInput.value = slugify(titleInput.value);
+        }
+      });
+
+      // Gerador do HTML
+      btnGenerate.addEventListener("click", function () {
+        const title = titleInput.value.trim();
+        let slug = slugInput.value.trim();
+        const lead = leadInput.value.trim();
+        const category = categoryInput.value.trim();
+        const jurisdiction = jurisdictionInput.value.trim();
+        const author = authorInput.value.trim();
+        const dateStr = dateInput.value.trim();
+        const metaDesc = metaDescInput.value.trim() || lead;
+        const rawContent = contentInput.value.trim();
+        const rawSources = sourcesInput.value.trim();
+
+        if (!title || !rawContent) {
+          alert("Por favor, preencha pelo menos o Título e o Conteúdo do artigo.");
+          return;
+        }
+
+        if (!slug) {
+          slug = slugify(title);
+          slugInput.value = slug;
+        }
+        currentSlug = slug;
+
+        // Tratar parágrafos se for texto simples
+        let formattedBody = rawContent;
+        if (!formattedBody.includes("<p>")) {
+          formattedBody = formattedBody
+            .split("\n\n")
+            .filter(function (p) { return p.trim().length > 0; })
+            .map(function (p) { return "<p>" + p.trim().replace(/\n/g, "<br>") + "</p>"; })
+            .join("\n\n          ");
+        }
+
+        // Tratar lista de fontes
+        let sourcesListHtml = "";
+        if (rawSources) {
+          const lines = rawSources.split("\n").filter(function (l) { return l.trim().length > 0; });
+          sourcesListHtml = lines.map(function (l) { return "<li>" + l.trim() + "</li>"; }).join("\n            ");
+        } else {
+          sourcesListHtml = "<li>Acórdãos e registos doutrinários históricos documentados.</li>";
+        }
+
+        // Montar o documento HTML5 puro
+        generatedHtmlCode = '<!DOCTYPE html>\n' +
+'<html lang="pt">\n' +
+'<head>\n' +
+'  <meta charset="UTF-8">\n' +
+'  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
+'  <title>' + escapeHtml(title) + ' — Pílulas Jurídicas</title>\n' +
+'  <meta name="description" content="' + escapeHtml(metaDesc) + '">\n' +
+'  <link rel="canonical" href="artigos/' + escapeHtml(slug) + '">\n' +
+'  <meta property="og:title" content="' + escapeHtml(title) + ' — Pílulas Jurídicas">\n' +
+'  <meta property="og:description" content="' + escapeHtml(metaDesc) + '">\n' +
+'  <meta property="og:type" content="article">\n' +
+'  <link rel="stylesheet" href="../css/style.css">\n' +
+'</head>\n' +
+'<body>\n' +
+'  <div class="legal-alert-bar">\n' +
+'    Pílulas Jurídicas • Conhecimento e História do Direito em Formato Estático e Veloz\n' +
+'  </div>\n\n' +
+'  <header class="site-header">\n' +
+'    <div class="container header-inner">\n' +
+'      <a href="../index.html" class="brand-link">\n' +
+'        <img src="../imagens/logo.svg" alt="Pílulas Jurídicas" class="brand-logo" width="34" height="34">\n' +
+'        <div class="brand-text">\n' +
+'          <span class="brand-title">Pílulas Jurídicas</span>\n' +
+'          <span class="brand-subtitle">Curiosidades &amp; Direito</span>\n' +
+'        </div>\n' +
+'      </a>\n\n' +
+'      <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Abrir Menu" aria-expanded="false">\n' +
+'        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">\n' +
+'          <line x1="3" y1="12" x2="21" y2="12"></line>\n' +
+'          <line x1="3" y1="6" x2="21" y2="6"></line>\n' +
+'          <line x1="3" y1="18" x2="21" y2="18"></line>\n' +
+'        </svg>\n' +
+'      </button>\n\n' +
+'      <nav>\n' +
+'        <ul id="navMenu" class="nav-menu">\n' +
+'          <li><a href="../index.html" class="nav-link">Início</a></li>\n' +
+'          <li><a href="../artigos.html" class="nav-link">Artigos</a></li>\n' +
+'          <li><a href="../categorias.html" class="nav-link">Categorias</a></li>\n' +
+'          <li><a href="../sobre.html" class="nav-link">Sobre</a></li>\n' +
+'          <li><a href="../contacto.html" class="nav-link">Contacto</a></li>\n' +
+'        </ul>\n' +
+'      </nav>\n' +
+'    </div>\n' +
+'  </header>\n\n' +
+'  <main class="main-content">\n' +
+'    <div class="container reading-container">\n' +
+'      <article>\n' +
+'        <header class="article-header">\n' +
+'          <div class="breadcrumbs">\n' +
+'            <a href="../index.html">Início</a> &rsaquo; \n' +
+'            <a href="../artigos.html">Artigos</a> &rsaquo; \n' +
+'            <a href="../categorias.html">' + escapeHtml(category) + '</a>\n' +
+'          </div>\n\n' +
+'          <h1 class="article-title">' + escapeHtml(title) + '</h1>\n' +
+'          <p class="article-lead">' + escapeHtml(lead) + '</p>\n\n' +
+'          <div class="article-meta-bar">\n' +
+'            <span><strong>Categoria:</strong> <a href="../categorias.html">' + escapeHtml(category) + '</a></span>\n' +
+'            <span><strong>Jurisdição:</strong> ' + escapeHtml(jurisdiction) + '</span>\n' +
+'            <span><strong>Data:</strong> ' + escapeHtml(dateStr) + '</span>\n' +
+'            <span><strong>Autor:</strong> ' + escapeHtml(author) + '</span>\n' +
+'          </div>\n' +
+'        </header>\n\n' +
+'        <section class="article-body">\n' +
+'          ' + formattedBody + '\n' +
+'        </section>\n\n' +
+'        <section class="sources-box">\n' +
+'          <div class="sources-title">\n' +
+'            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>\n' +
+'            Fontes &amp; Referências Históricas\n' +
+'          </div>\n' +
+'          <ul class="sources-list">\n' +
+'            ' + sourcesListHtml + '\n' +
+'          </ul>\n' +
+'        </section>\n\n' +
+'        <div class="disclaimer-card">\n' +
+'          <div class="disclaimer-icon">⚠️</div>\n' +
+'          <div>\n' +
+'            <strong>Aviso Jurídico:</strong> Este site possui finalidade exclusivamente informativa e educativa. O conteúdo apresentado não constitui aconselhamento jurídico e não substitui a consulta a um profissional habilitado.\n' +
+'          </div>\n' +
+'        </div>\n\n' +
+'        <section class="related-articles">\n' +
+'          <h2>Pílulas Relacionadas</h2>\n' +
+'          <div class="articles-grid two-cols">\n' +
+'            <article class="card">\n' +
+'              <span class="badge badge-gold">Artigos</span>\n' +
+'              <h3 class="card-title"><a href="origem-martelo-juizes.html">A Origem do Martelo dos Juízes</a></h3>\n' +
+'              <p class="card-summary">Conheça os mitos e realidades das cortes de justiça.</p>\n' +
+'            </article>\n' +
+'            <article class="card">\n' +
+'              <span class="badge badge-gold">Direito</span>\n' +
+'              <h3 class="card-title"><a href="in-dubio-pro-reo-origem.html">O Princípio In Dubio Pro Reo</a></h3>\n' +
+'              <p class="card-summary">A doutrina clássica de presunção de inocência no processo penal.</p>\n' +
+'            </article>\n' +
+'          </div>\n' +
+'        </section>\n' +
+'      </article>\n' +
+'    </div>\n' +
+'  </main>\n\n' +
+'  <footer class="site-footer">\n' +
+'    <div class="container">\n' +
+'      <div class="footer-bottom">\n' +
+'        <div>&copy; 2026 Pílulas Jurídicas. Site 100% Estático • Zero Dependências.</div>\n' +
+'        <div>Desenvolvido com HTML5, CSS3 e JS Puro para Cloudflare Pages &amp; GitHub.</div>\n' +
+'      </div>\n' +
+'    </div>\n' +
+'  </footer>\n\n' +
+'  <script src="../js/app.js"><\/script>\n' +
+'</body>\n' +
+'</html>';
+
+        // Atualizar tela de saída
+        outFilename.textContent = slug;
+        codeOutput.textContent = generatedHtmlCode;
+
+        // Snippet para js/app.js
+        const jsObject = '{\n' +
+'  titulo: "' + escapeQuotes(title) + '",\n' +
+'  url: "artigos/' + slug + '",\n' +
+'  categoria: "' + escapeQuotes(category) + '",\n' +
+'  jurisdicao: "' + escapeQuotes(jurisdiction) + '",\n' +
+'  resumo: "' + escapeQuotes(lead) + '",\n' +
+'  data: "' + escapeQuotes(dateStr) + '"\n' +
+'},';
+        appJsSnippet.textContent = jsObject;
+
+        outputSection.classList.add("visible");
+        outputSection.scrollIntoView({ behavior: "smooth" });
+      });
+
+      // Botão Baixar HTML
+      btnDownload.addEventListener("click", function () {
+        if (!generatedHtmlCode) return;
+        const blob = new Blob([generatedHtmlCode], { type: "text/html;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = currentSlug || "artigo.html";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+
+      // Botão Copiar HTML
+      btnCopyHtml.addEventListener("click", function () {
+        if (!generatedHtmlCode) return;
+        navigator.clipboard.writeText(generatedHtmlCode).then(function () {
+          btnCopyHtml.textContent = "Copiado com Sucesso! ✓";
+          setTimeout(function () {
+            btnCopyHtml.textContent = "Copiar Código HTML";
+          }, 2000);
+        }).catch(function () {
+          alert("Selecione e copie manualmente pelo bloco de código.");
+        });
+      });
+
+      // Alternar Prévia
+      btnTogglePreview.addEventListener("click", function () {
+        if (previewContainer.style.display === "none") {
+          previewContent.innerHTML = generatedHtmlCode;
+          previewContainer.style.display = "block";
+        } else {
+          previewContainer.style.display = "none";
+        }
+      });
+
+      function escapeHtml(str) {
+        return str
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;");
+      }
+
+      function escapeQuotes(str) {
+        return str.replace(/"/g, '\\"');
+      }
+    })();
+  </script>
+</body>
+</html>
